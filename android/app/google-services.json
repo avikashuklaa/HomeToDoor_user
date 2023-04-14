@@ -1,0 +1,97 @@
+{
+  "project_info": {
+    "project_number": "790948346785",
+    "project_id": "hometodoorchef-9d95e",
+    "storage_bucket": "hometodoorchef-9d95e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:790948346785:android:9b01093f7c067977eae9e0",
+        "android_client_info": {
+          "package_name": "com.shuvi.hometodoor_deliverer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "790948346785-suc187976g8s8bn4i11sepobc7oibkt1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbMTQoX8EFRezVNnLkYsOJXNRtK7LStCc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "790948346785-suc187976g8s8bn4i11sepobc7oibkt1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:790948346785:android:4e935167fa5e2052eae9e0",
+        "android_client_info": {
+          "package_name": "com.shuvi.hometodoor_user"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "790948346785-suc187976g8s8bn4i11sepobc7oibkt1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbMTQoX8EFRezVNnLkYsOJXNRtK7LStCc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "790948346785-suc187976g8s8bn4i11sepobc7oibkt1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:790948346785:android:76ea73b65e06b908eae9e0",
+        "android_client_info": {
+          "package_name": "com.shuvi.htd_chef"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "790948346785-suc187976g8s8bn4i11sepobc7oibkt1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbMTQoX8EFRezVNnLkYsOJXNRtK7LStCc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "790948346785-suc187976g8s8bn4i11sepobc7oibkt1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
