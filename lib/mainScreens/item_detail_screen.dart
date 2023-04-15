@@ -68,10 +68,7 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
 
                   //check if item already exists in cart
                   seperateItemIDsList.contains(widget.model!.itemID) ?
-                      Fluttertoast.showToast(msg: 'Item is already in the cart') :
-
-                      //else add item to cart
-                  addItemToCart(widget.model!.itemID, context, itemCounter);
+                      Fluttertoast.showToast(msg: "Item is already in the cart") : addItemToCart(widget.model!.itemID, context, itemCounter);
               },
               child: Container(
                 decoration: const BoxDecoration(

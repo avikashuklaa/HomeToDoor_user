@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hometodoor_user/assistantMethods/cart_item_counter.dart';
+import 'package:provider/provider.dart';
 
 class MyAppBar extends StatefulWidget with PreferredSizeWidget {
   final PreferredSizeWidget? bottom;
@@ -63,11 +65,16 @@ class _MyAppBarState extends State<MyAppBar> {
                     top: 3,
                     right: 4,
                     child: Center(
-                      child: Text("0",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 12.0
-                        ),),
+                      child: Consumer<CartItemCounter>(
+                        builder: (context, counter, c){
+                          return Text(counter.count.toString(),
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 12.0
+                            ),
+                          );
+                        },
+                      ),
                     ),
                   )
                 ],

@@ -1,7 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:hometodoor_user/assistantMethods/cart_item_counter.dart';
 import 'package:hometodoor_user/global/global.dart';
+import 'package:provider/provider.dart';
 
 seperateItemIDs(){
   List<String> seperateItemIDsList = [], defaultItemList = [];
@@ -14,7 +16,7 @@ seperateItemIDs(){
       String item = defaultItemList[i].toString();
       var pos = item.lastIndexOf(":");
 
-      String getItemId = (pos !=-1)? item.substring(0, pos) : item;
+      String getItemId = (pos != -1)? item.substring(0, pos) : item;
 
       print("This is item ID now = " + getItemId);
       seperateItemIDsList.add(getItemId);
@@ -31,7 +33,7 @@ seperateItemIDs(){
 addItemToCart(String? foodItemId, BuildContext context, int itemCounter){
 
   List<String>? tempList = sharedPreferences!.getStringList("userCart");
-  tempList!.add(foodItemId! + " :$itemCounter");
+  tempList!.add(foodItemId! + ":$itemCounter");
 
   FirebaseFirestore.instance.collection("users").doc(firebaseAuth.currentUser!.uid).update({
     "userCart":tempList,
@@ -39,7 +41,12 @@ addItemToCart(String? foodItemId, BuildContext context, int itemCounter){
 
     Fluttertoast.showToast(msg: "Item added successfully!");
     sharedPreferences!.setStringList("userCart", tempList);
+
+    //update the badge
+    Provider.of<CartItemCounter>(context, listen: false).displayCartListItemNumber();
   });
+
+
 
 
 
