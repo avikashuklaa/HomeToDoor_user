@@ -1,10 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
+import '../assistantMethods/assistant_methods.dart';
 import '../global/global.dart';
 import '../models/chefs.dart';
 import '../models/menus.dart';
+import '../splashScreen/splash_screen.dart';
 import '../widgets/chefs_design.dart';
 import '../widgets/menus_design.dart';
 import '../widgets/my_drawer.dart';
@@ -25,7 +28,7 @@ class _MenusScreenState extends State<MenusScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: MyDrawer(),
+
         appBar: AppBar(
           flexibleSpace: Container(
             decoration: const BoxDecoration(
@@ -41,11 +44,22 @@ class _MenusScreenState extends State<MenusScreen> {
               ),
             ),
           ),
+          leading: IconButton(
+            icon: Icon(
+                Icons.arrow_back
+            ),
+            onPressed: (){
+              clearCartNow(context);
+              Navigator.push(context, MaterialPageRoute(builder: (c) => MySplashScreen()));
+              //Fluttertoast.showToast(msg: "The cart has been cleared.");
+            },
+          ),
           title: Text(
             "HomeToDoor"
           ),
           centerTitle: true,
           automaticallyImplyLeading: true,
+
 
         ),
         body: CustomScrollView(

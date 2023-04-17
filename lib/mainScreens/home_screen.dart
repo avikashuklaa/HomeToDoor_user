@@ -6,6 +6,7 @@ import 'package:hometodoor_user/widgets/chefs_design.dart';
 import 'package:hometodoor_user/widgets/my_drawer.dart';
 import 'package:hometodoor_user/widgets/progress_bar.dart';
 
+import '../assistantMethods/assistant_methods.dart';
 import '../authentication/auth_screen.dart';
 import '../global/global.dart';
 import '../models/chefs.dart';
@@ -49,6 +50,13 @@ class _HomeScreenState extends State<HomeScreen> {
     "slider/26.jpg",
     "slider/27.jpg"
   ];
+
+  @override
+  void initState() {
+
+    super.initState();
+    clearCartNow(context);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

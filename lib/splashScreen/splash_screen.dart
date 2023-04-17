@@ -19,7 +19,7 @@ class _MySplashScreenState extends State<MySplashScreen> {
   {
 
 
-    Timer(const Duration(seconds: 8), () async {
+    Timer(const Duration(seconds: 4), () async {
       //if chef is already logged in
       if(firebaseAuth.currentUser != null){
          Navigator.push(context, MaterialPageRoute(builder: (c)=> const HomeScreen()));

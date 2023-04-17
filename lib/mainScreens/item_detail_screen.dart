@@ -23,7 +23,7 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(),
+      appBar: MyAppBar(chefUID: widget.model!.chefUID),
       body: Column(
 
         children: [
@@ -36,16 +36,14 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
               incDecBgColor: Colors.blueGrey,
               min: 1,
               max: 9,
-              initialValue: 1,
-              buttonArrangement: ButtonArrangement.incRightDecLeft
+              initialValue: 1,              buttonArrangement: ButtonArrangement.incRightDecLeft
             ),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
               widget.model!.title.toString(), style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, fontFamily: "VarelaRound"),
-            ),
-          ),
+            ),         ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(

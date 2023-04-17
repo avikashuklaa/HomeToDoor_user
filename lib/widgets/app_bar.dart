@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:hometodoor_user/assistantMethods/cart_item_counter.dart';
+import 'package:hometodoor_user/mainScreens/cart_screen.dart';
 import 'package:provider/provider.dart';
 
 class MyAppBar extends StatefulWidget with PreferredSizeWidget {
   final PreferredSizeWidget? bottom;
-  MyAppBar({this.bottom});
+  final String? chefUID;
+  MyAppBar({this.bottom, this.chefUID});
 
   @override
   State<MyAppBar> createState() => _MyAppBarState();
@@ -50,7 +52,7 @@ class _MyAppBarState extends State<MyAppBar> {
           children: [
             IconButton(
                 onPressed: (){
-
+                    Navigator.push(context, MaterialPageRoute(builder: (c) => CartScreen(chefUID: widget.chefUID)));
                 },
                 icon: Icon(Icons.shopping_cart)),
             Positioned(
