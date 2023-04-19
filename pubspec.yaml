@@ -48,6 +48,7 @@ dependencies:
   number_inc_dec: ^0.8.0
   fluttertoast: ^8.2.1
   provider: ^6.0.5
+  url_launcher: ^6.0.17
 
 dev_dependencies:
   flutter_test:

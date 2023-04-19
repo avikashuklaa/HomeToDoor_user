@@ -1,6 +1,14 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:hometodoor_user/mainScreens/save_address_screen.dart';
 import 'package:hometodoor_user/widgets/simple_app_bar.dart';
+import 'package:provider/provider.dart';
+
+import '../assistantMethods/address_changer.dart';
+import '../global/global.dart';
+import '../models/address.dart';
+import '../widgets/address_design.dart';
+import '../widgets/progress_bar.dart';
 
 class AddressScreen extends StatefulWidget {
 
@@ -48,7 +56,38 @@ class _AddressScreenState extends State<AddressScreen> {
                 fontSize: 20.0
               ),),
             ),
-          )
+          ),
+
+          Consumer<AddressChanger>(builder: (context, address, c){
+            return Flexible(
+              child: StreamBuilder<QuerySnapshot>(
+                stream:  FirebaseFirestore.instance.collection("users").doc(sharedPreferences!.getString("uid"))
+                    .collection("userAddress").snapshots(),
+                builder: (context, snapshot){
+                  return !snapshot.hasData
+                      ? Center(child: circularProgress(),)
+                      : snapshot.data!.docs.length == 0
+                      ? Container()
+                      : ListView.builder(
+                    itemCount: snapshot.data!.docs.length,
+                    shrinkWrap: true,
+                    itemBuilder: (context, index){
+                      return AddressDesign(
+                        currentIndex: address.count,
+                        value: index,
+                        addressID: snapshot.data!.docs[index].id,
+                        totalAmount: widget.totalAmount,
+                        chefUID: widget.chefUID,
+                        model: Address.fromJson(
+                          snapshot.data!.docs[index].data()! as Map<String, dynamic>
+                        ),
+                      );
+                    },
+                  );
+                },
+              ),
+            );
+          })
         ],
       ),
     );

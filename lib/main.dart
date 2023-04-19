@@ -6,6 +6,7 @@ import 'package:hometodoor_user/splashScreen/splash_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'assistantMethods/address_changer.dart';
 import 'global/global.dart';
 
 Future<void> main() async {
@@ -28,6 +29,9 @@ class MyApp extends StatelessWidget {
           ),
         ChangeNotifierProvider(
             create: (c)=>TotalAmount()
+        ),
+        ChangeNotifierProvider(
+            create: (c)=> AddressChanger()
         ),
       ],
       child: MaterialApp(
