@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hometodoor_user/assistantMethods/address_changer.dart';
+import 'package:hometodoor_user/mainScreens/placed_order_screen.dart';
 import 'package:provider/provider.dart';
 
 import '../maps/maps.dart';
@@ -156,7 +157,11 @@ class _AddressDesignState extends State<AddressDesign> {
                 primary: Colors.pink
               ),
               onPressed: (){
-
+                  Navigator.push(context, MaterialPageRoute(builder: (c) => PlacedOrderScreen(
+                    addressID : widget.addressID,
+                    totalAmount : widget.totalAmount,
+                    chefUID : widget.chefUID
+                  )));
               },
             )
                 : Container(),
