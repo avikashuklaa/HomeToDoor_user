@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hometodoor_user/global/global.dart';
+import 'package:hometodoor_user/mainScreens/home_screen.dart';
+import 'package:hometodoor_user/mainScreens/my_orders_screen.dart';
 
 import '../authentication/auth_screen.dart';
 
@@ -67,7 +69,7 @@ class MyDrawer extends StatelessWidget {
                     ),
                   ),
                   onTap: (){
-
+                    Navigator.push(context, MaterialPageRoute(builder: (c) => HomeScreen()));
                   },
                 ),
                 ListTile(
@@ -82,7 +84,7 @@ class MyDrawer extends StatelessWidget {
                     ),
                   ),
                   onTap: (){
-
+                      Navigator.push(context, MaterialPageRoute(builder: (c) => MyOrdersScreen()));
                   },
                 ),
                 ListTile(

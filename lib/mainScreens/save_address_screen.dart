@@ -43,7 +43,7 @@ class SaveAddressScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: SimpleAppBar(),
+      appBar: SimpleAppBar(title: "HometoDoor",),
       floatingActionButton: FloatingActionButton.extended(
         label: Text("Save"),
         icon: Icon(Icons.check),

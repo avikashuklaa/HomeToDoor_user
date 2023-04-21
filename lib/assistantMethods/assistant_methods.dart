@@ -6,6 +6,31 @@ import 'package:hometodoor_user/global/global.dart';
 import 'package:hometodoor_user/splashScreen/splash_screen.dart';
 import 'package:provider/provider.dart';
 
+seperateOrderItemIDs(orderIDs){
+  List<String> seperateItemIDsList = [], defaultItemList = [];
+  int i=0;
+
+  defaultItemList = List<String>.from(orderIDs);
+
+  for(i; i<defaultItemList.length; i++)
+  {
+    String item = defaultItemList[i].toString();
+    var pos = item.lastIndexOf(":");
+
+    String getItemId = (pos != -1)? item.substring(0, pos) : item;
+
+    print("This is item ID now = " + getItemId);
+    seperateItemIDsList.add(getItemId);
+  }
+
+  print("This is items list now = ");
+  print(seperateItemIDsList);
+
+  return seperateItemIDsList;
+
+
+}
+
 seperateItemIDs(){
   List<String> seperateItemIDsList = [], defaultItemList = [];
   int i=0;
@@ -49,6 +74,34 @@ addItemToCart(String? foodItemId, BuildContext context, int itemCounter){
 
 
 
+
+
+}
+seperateOrderItemQuantities(orderIDs){
+  List<String> seperateItemQuantityList = [];
+  List<String> defaultItemList = [];
+  int i=1;
+
+  defaultItemList = List<String>.from(orderIDs);
+
+  for(i; i<defaultItemList.length; i++)
+  {
+    // 5665789:7
+    String item = defaultItemList[i].toString();
+
+    // 7
+    List<String> listItemCharacters = item.split(":").toList();
+    var quanNumber = int.parse(listItemCharacters[1].toString());
+
+
+    print("This is quantity number = " + quanNumber.toString());
+    seperateItemQuantityList.add(quanNumber.toString());
+  }
+
+  print("This is items list now = ");
+  print(seperateItemQuantityList);
+
+  return seperateItemQuantityList;
 
 
 }

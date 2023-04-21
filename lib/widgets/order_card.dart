@@ -27,8 +27,8 @@ class OrderCard extends StatelessWidget {
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Color(0xffff99c8),
-              Color(0xff023e8a),
+              Colors.black12,
+              Colors.black12
             ],
             begin: const FractionalOffset(0.0, 0.0),
             end: const FractionalOffset(1.0, 0.0),
@@ -45,7 +45,7 @@ class OrderCard extends StatelessWidget {
           itemBuilder: (context, index)
           {
             Items model = Items.fromJson(data![index].data()! as Map<String, dynamic>);
-            return placedOrderDesignWidget(model, context, seperateQuantitiesList);
+            return placedOrderDesignWidget(model, context, seperateQuantitiesList![index]);
           },
         ),
 
@@ -55,6 +55,76 @@ class OrderCard extends StatelessWidget {
 }
 
 Widget placedOrderDesignWidget(Items model, BuildContext context, seperateQuantitiesList){
-  return Container();
+  return Container(
+    width: MediaQuery.of(context).size.width,
+    height: 120,
+    color: Colors.grey[200],
+    child: Row(
+      children: [
+        Image.network(model.thumbnailUrl!, width: 120,),
+        SizedBox(width: 10,),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 20,),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Expanded(
+                    child: Text(
+                      model.title!,
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 10,),
+                  Text(
+                    "₹" ,
+                    style: TextStyle(
+                      color: Colors.blue,
+                      fontSize: 16
+                    ),
+                  ),
+                  Text(
+                    model.price.toString(),
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.blue
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(height: 20,),
+              Row(
+                children: [
+                  Text(
+                    "x ",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14
+                    ),
+                  ),
+                  Expanded(
+                    child: Text(
+                      seperateQuantitiesList,
+                      style: TextStyle(
+                        color: Colors.black54,
+                        fontSize: 25,
+
+                      ),
+                    ),
+                  )
+                ],
+              )
+            ],
+          ),
+        )
+      ],
+    ),
+  );
 }
 

@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class SimpleAppBar extends StatelessWidget with PreferredSizeWidget{
 
   final PreferredSizeWidget? bottom;
+  String? title;
 
-  SimpleAppBar({this.bottom});
+  SimpleAppBar({this.bottom, this.title});
 
   @override
   Size get preferredSize => bottom==null ? Size(56, AppBar().preferredSize.height) : Size(56, 80 + AppBar().preferredSize.height);
@@ -29,7 +30,7 @@ class SimpleAppBar extends StatelessWidget with PreferredSizeWidget{
       ),
 
       title: Text(
-          "HomeToDoor"
+          title!
       ),
       centerTitle: true,
       automaticallyImplyLeading: true,
