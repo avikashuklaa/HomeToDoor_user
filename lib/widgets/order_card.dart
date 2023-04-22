@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:hometodoor_user/mainScreens/order_details_screen.dart';
 
 import '../models/items.dart';
 
@@ -21,7 +22,7 @@ class OrderCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
-
+          Navigator.push(context, MaterialPageRoute(builder: (c) => OrderDetailsScreen(orderID: orderID,)));
       },
       child: Container(
         decoration: const BoxDecoration(
