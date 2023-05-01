@@ -1,5 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:hometodoor_user/widgets/chefs_design.dart';
+
+import '../models/chefs.dart';
 
 class SearchScreen extends StatefulWidget {
 
@@ -9,8 +12,12 @@ class SearchScreen extends StatefulWidget {
 
 class _SearchScreenState extends State<SearchScreen> {
 
-  initSearchRestaurant(String textEntered) async{
-    FirebaseFirestore.instance.collection("chefs")
+  Future<QuerySnapshot>? restaurantsDocumentsList;
+  String sellerNameText="";
+
+  initSearchRestaurant(String textEntered) {
+    restaurantsDocumentsList = FirebaseFirestore.instance.collection("chefs")
+        .where("chefName", isGreaterThanOrEqualTo: textEntered).get();
   }
 
   @override
@@ -33,6 +40,9 @@ class _SearchScreenState extends State<SearchScreen> {
         ),
         title: TextField(
           onChanged: (textEntered){
+              setState(() {
+                sellerNameText = textEntered;
+              });
               initSearchRestaurant(textEntered);
           },
           decoration: InputDecoration(
@@ -46,7 +56,7 @@ class _SearchScreenState extends State<SearchScreen> {
               icon: Icon(Icons.search),
               color: Colors.white,
               onPressed: (){
-
+                initSearchRestaurant(sellerNameText);
               },
             )
           ),
@@ -55,6 +65,25 @@ class _SearchScreenState extends State<SearchScreen> {
             fontSize: 16
           ),
         ),
+      ),
+      body: FutureBuilder<QuerySnapshot>(
+        future: restaurantsDocumentsList,
+        builder: (context, snapshot){
+          return snapshot.hasData
+              ? ListView.builder(
+            itemCount: snapshot.data!.docs.length,
+            itemBuilder: (context, index){
+              Chefs model = Chefs.fromJson(snapshot.data!.docs[index].data()! as Map<String, dynamic>);
+
+              return ChefsDesignWidget(model: model, context: context);
+            },
+          )
+              : Center(
+            child: Text(
+              "No records found!"
+            ),
+          );
+        },
       ),
     );
   }
