@@ -65,8 +65,8 @@ class _HomeScreenState extends State<HomeScreen> {
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                Color(0xffff99c8),
-                Color(0xff023e8a),
+                Color(0xff2ec4b6),
+                Color(0xff2ec4b6),
               ],
               begin: const FractionalOffset(0.0, 0.0),
               end: const FractionalOffset(1.0, 0.0),
@@ -90,7 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: EdgeInsets.all(10.0),
               child: Container(
                 height: MediaQuery.of(context).size.height * .3,
-                width: MediaQuery.of(context).size.width,
+                width: MediaQuery.of(context).size.width - 10,
                 child: CarouselSlider(
                   options: CarouselOptions(
                     height:  MediaQuery.of(context).size.height * .3,
@@ -115,7 +115,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Padding(
                           padding: EdgeInsets.all(4.0),
                           child: Image.asset(index,
-                          fit: BoxFit.fill,
+                          fit: BoxFit.cover,
                           ),
                         ),
                       );
@@ -132,7 +132,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ? SliverToBoxAdapter(child: Center(child: circularProgress(),),)
                   : SliverStaggeredGrid.countBuilder(
                   crossAxisCount: 1,
-                  staggeredTileBuilder: (c) => StaggeredTile.fit(1),
+                  staggeredTileBuilder: (c) => StaggeredTile.fit(10),
                   itemBuilder: (context, index) {
                     Chefs cmodel = Chefs.fromJson(
                       snapshot.data!.docs[index].data()! as Map<String, dynamic>

@@ -26,7 +26,7 @@ class _ChefsDesignWidgetState extends State<ChefsDesignWidget> {
       child: Padding(
         padding: EdgeInsets.all(16.0),
         child: Container(
-          height: 295,
+          height: 320,
           width: MediaQuery.of(context).size.width,
           child: Column(
             children: [
@@ -37,23 +37,27 @@ class _ChefsDesignWidgetState extends State<ChefsDesignWidget> {
               ),
               Image.network(
                   widget.model!.chefAvatarUrl!,
-                  height: 210.0,
-                fit: BoxFit.cover,
+                  height: 260.0,
+                fit: BoxFit.fitWidth,
               ),
-              SizedBox(height: 1.0,
+              SizedBox(height: 8.0,
               ),
               Text(
                 widget.model!.chefName!,
-                style: TextStyle(color: Colors.blueGrey,
-                fontSize: 20,
+                style: TextStyle(color: Colors.black,
+                fontSize: 23,
                 fontFamily: "Varela"),
               ),
-              Text(
-                widget.model!.chefEmail!,
-                style: TextStyle(color: Colors.blueGrey,
-                    fontSize: 12,
-                    fontFamily: "Varela"),
+              SizedBox(height: 5.0,
               ),
+              // Text(
+              //   widget.model!.chefEmail!,
+              //   style: TextStyle(color: Colors.blueGrey,
+              //       fontSize: 13,
+              //       fontFamily: "Varela",
+              //     fontWeight: FontWeight.bold
+              //   ),
+              // ),
 
 
             ],

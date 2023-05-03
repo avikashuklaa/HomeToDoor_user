@@ -33,7 +33,7 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
             padding: const EdgeInsets.all(18.0),
             child: NumberInputPrefabbed.roundedButtons(
                 controller: counterTextEditingController,
-              incDecBgColor: Colors.blueGrey,
+              incDecBgColor: Color(0xff2ec4b6),
               min: 1,
               max: 9,
               initialValue: 1,              buttonArrangement: ButtonArrangement.incRightDecLeft
@@ -72,8 +72,8 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      Color(0xffff99c8),
-                      Color(0xff023e8a),
+                      Color(0xff087e8b),
+                      Color(0xff087e8b),
                     ],
                     begin: const FractionalOffset(0.0, 0.0),
                     end: const FractionalOffset(1.0, 0.0),
@@ -81,7 +81,7 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                     tileMode: TileMode.clamp,
                   ),
                 ),
-                width: MediaQuery.of(context).size.width - 12,
+                width: MediaQuery.of(context).size.width - 90,
                 height: 50,
                 child: Center(
                   child: Text(

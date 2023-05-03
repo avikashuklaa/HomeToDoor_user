@@ -24,8 +24,8 @@ class _MyAppBarState extends State<MyAppBar> {
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Color(0xffff99c8),
-              Color(0xff023e8a),
+              Color(0xff2ec4b6),
+              Color(0xff2ec4b6),
             ],
             begin: const FractionalOffset(0.0, 0.0),
             end: const FractionalOffset(1.0, 0.0),
@@ -54,14 +54,14 @@ class _MyAppBarState extends State<MyAppBar> {
                 onPressed: (){
                     Navigator.push(context, MaterialPageRoute(builder: (c) => CartScreen(chefUID: widget.chefUID)));
                 },
-                icon: Icon(Icons.shopping_cart)),
+                icon: Icon(Icons.shopping_cart), color: Color(0xff335c67),),
             Positioned(
               child: Stack(
                 children: [
                   Icon(
                     Icons.brightness_1,
                     size: 20.0,
-                    color: Colors.black,
+                    color: Color(0xff335c67),
                   ),
                   Positioned(
                     top: 3,

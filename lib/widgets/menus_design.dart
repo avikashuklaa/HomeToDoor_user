@@ -27,7 +27,7 @@ class _MenusDesignWidgetState extends State<MenusDesignWidget> {
       child: Padding(
         padding: EdgeInsets.all(16.0),
         child: Container(
-          height: 295,
+          height: 252,
           width: MediaQuery.of(context).size.width,
           child: Column(
             children: [
@@ -41,20 +41,20 @@ class _MenusDesignWidgetState extends State<MenusDesignWidget> {
                 height: 210.0,
                 fit: BoxFit.cover,
               ),
-              SizedBox(height: 1.0,
+              SizedBox(height: 8.0,
               ),
               Text(
                 widget.model!.menuTitle!,
-                style: TextStyle(color: Colors.blueGrey,
+                style: TextStyle(color: Colors.black,
                     fontSize: 20,
                     fontFamily: "Varela"),
               ),
-              Text(
-                widget.model!.menuInfo!,
-                style: TextStyle(color: Colors.blueGrey,
-                    fontSize: 12,
-                    fontFamily: "Varela"),
-              ),
+              // Text(
+              //   widget.model!.menuInfo!,
+              //   style: TextStyle(color: Colors.black,
+              //       fontSize: 15,
+              //       fontFamily: "Varela"),
+              // ),
 
 
             ],

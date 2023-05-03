@@ -43,8 +43,9 @@ class SaveAddressScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: SimpleAppBar(title: "HometoDoor",),
+      appBar: SimpleAppBar(title: "Home To Door",),
       floatingActionButton: FloatingActionButton.extended(
+        backgroundColor: Color(0xff2ec4b6),
         label: Text("Save"),
         icon: Icon(Icons.check),
         onPressed: (){
@@ -78,7 +79,7 @@ class SaveAddressScreen extends StatelessWidget {
                 child: Text(
                   "Save Address",
                   style: TextStyle(
-                    color: Colors.black,
+                    color: Color(0xff087e8b),
                     fontWeight: FontWeight.bold,
                     fontSize: 20.0
                   ),
@@ -111,6 +112,7 @@ class SaveAddressScreen extends StatelessWidget {
             SizedBox(height: 15,),
 
             ElevatedButton.icon(
+
               label: Text(
                 "Get live location",
                 style: TextStyle(
@@ -122,10 +124,12 @@ class SaveAddressScreen extends StatelessWidget {
               color: Colors.white,
               ),
               style: ButtonStyle(
+
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
-                    side: BorderSide(color: Colors.cyan)
+                    side: BorderSide(color: Color(0xff2ec4b6),
+                    )
                   ),
                 ),
               ),

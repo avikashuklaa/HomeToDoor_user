@@ -32,7 +32,7 @@ class _AddressScreenState extends State<AddressScreen> {
           label: Text(
             "Add new address",
           ),
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Color(0xff087e8b),
         icon: Icon(
           Icons.add_location,
           color: Colors.white,
@@ -49,7 +49,7 @@ class _AddressScreenState extends State<AddressScreen> {
             alignment: Alignment.centerLeft,
             child: Padding(
               padding: EdgeInsets.all(8),
-              child: Text("Select Address",
+              child: Text("Select Address : ",
               style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,

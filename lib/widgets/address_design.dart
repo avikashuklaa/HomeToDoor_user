@@ -39,7 +39,7 @@ class _AddressDesignState extends State<AddressDesign> {
 
           },
       child: Card(
-        color: Colors.black12.withOpacity(0.4),
+        color: Color(0xffcbf3f0).withOpacity(0.4),
         child: Column(
           children: [
             Row(
@@ -47,7 +47,7 @@ class _AddressDesignState extends State<AddressDesign> {
                 Radio(
                   groupValue: widget.currentIndex!,
                   value: widget.value!,
-                  activeColor: Colors.pink,
+                  activeColor: Color(0xffef476f),
                   onChanged: (val){
                     //provider
                     Provider.of<AddressChanger>(context, listen: false).displayResult(val);
@@ -140,7 +140,7 @@ class _AddressDesignState extends State<AddressDesign> {
                 "Check on maps",
               ),
               style: ElevatedButton.styleFrom(
-                primary: Colors.black54,
+                primary: Color(0xff087e8b),
               ),
               onPressed: (){
                 MapsUtils.openMapWithPosition(widget.model!.lat!,widget.model!.lng!);
@@ -154,7 +154,7 @@ class _AddressDesignState extends State<AddressDesign> {
                   "Proceed"
                 ),
               style: ElevatedButton.styleFrom(
-                primary: Colors.pink
+                primary: Color(0xffef476f)
               ),
               onPressed: (){
                   Navigator.push(context, MaterialPageRoute(builder: (c) => PlacedOrderScreen(
@@ -164,7 +164,9 @@ class _AddressDesignState extends State<AddressDesign> {
                   )));
               },
             )
+
                 : Container(),
+            SizedBox(height: 10,)
           ],
         ),
       ),

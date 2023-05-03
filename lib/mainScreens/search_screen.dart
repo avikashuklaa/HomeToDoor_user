@@ -28,7 +28,7 @@ class _SearchScreenState extends State<SearchScreen> {
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                Color(0xffff99c8),
+                Color(0xff2ec4b6),
                 Color(0xff023e8a),
               ],
               begin: const FractionalOffset(0.0, 0.0),
@@ -48,7 +48,7 @@ class _SearchScreenState extends State<SearchScreen> {
           decoration: InputDecoration(
             hintText: "Search here",
             hintStyle: TextStyle(
-              color: Colors.white54,
+              color: Colors.white,
               fontWeight: FontWeight.bold
             ),
             border: InputBorder.none,
@@ -80,7 +80,10 @@ class _SearchScreenState extends State<SearchScreen> {
           )
               : Center(
             child: Text(
-              "No records found!"
+              "No records found!",
+              style: TextStyle(
+                fontWeight: FontWeight.bold, fontSize: 19
+              ),
             ),
           );
         },

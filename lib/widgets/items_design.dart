@@ -41,18 +41,21 @@ class _ItemsDesignWidgetState extends State<ItemsDesignWidget> {
                 height: 210.0,
                 fit: BoxFit.cover,
               ),
-              SizedBox(height: 1.0,
+              SizedBox(height: 8.0,
               ),
               Text(
                 widget.model!.title!,
                 style: TextStyle(color: Colors.blueGrey,
                     fontSize: 20,
+                    fontWeight: FontWeight.bold,
                     fontFamily: "Varela"),
+              ),
+              SizedBox(height: 5.0,
               ),
               Text(
                 widget.model!.info!,
                 style: TextStyle(color: Colors.blueGrey,
-                    fontSize: 12,
+                    fontSize: 15,
                     fontFamily: "Varela"),
               ),
 

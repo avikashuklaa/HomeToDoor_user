@@ -178,7 +178,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   child: imageXFile==null ? Icon(
                     Icons.add_photo_alternate,
                     size: MediaQuery.of(context).size.width * 0.20,
-                    color: Colors.grey,
+                    color: Color(0xff83c5be),
                   ) : null ,
                 )
               ),
@@ -226,12 +226,12 @@ class _SignupScreenState extends State<SignupScreen> {
                   child: Text(
                     "Sign Up",
                     style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 style: ElevatedButton.styleFrom(
-                  primary: Color(0xffffcad4),
+                  primary: Color(0xff2ec4b6),
                 ),
                   
               ),

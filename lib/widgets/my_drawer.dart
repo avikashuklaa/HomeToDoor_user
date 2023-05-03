@@ -42,7 +42,7 @@ class MyDrawer extends StatelessWidget {
                   sharedPreferences!.getString("name")!,
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 20.0,
+                    fontSize: 30.0,
                     fontFamily:"Signatra",
                   ),
                 )
@@ -63,7 +63,7 @@ class MyDrawer extends StatelessWidget {
                 ListTile(
                   leading: Icon(
                     Icons.home,
-                    color: Colors.black,
+                    color: Color(0xff087e8b),
                   ),
                   title: Text(
                     "Home",
@@ -78,7 +78,7 @@ class MyDrawer extends StatelessWidget {
                 ListTile(
                   leading: Icon(
                     Icons.reorder,
-                    color: Colors.black,
+                    color: Color(0xff087e8b),
                   ),
                   title: Text(
                     "My Orders",
@@ -93,7 +93,7 @@ class MyDrawer extends StatelessWidget {
                 ListTile(
                   leading: Icon(
                     Icons.history,
-                    color: Colors.black,
+                    color: Color(0xff087e8b),
                   ),
                   title: Text(
                     "History",
@@ -108,7 +108,7 @@ class MyDrawer extends StatelessWidget {
                 ListTile(
                   leading: Icon(
                     Icons.search,
-                    color: Colors.black,
+                    color: Color(0xff087e8b),
                   ),
                   title: Text(
                     "Search",
@@ -123,7 +123,7 @@ class MyDrawer extends StatelessWidget {
                 ListTile(
                   leading: Icon(
                     Icons.location_city,
-                    color: Colors.black,
+                    color: Color(0xff087e8b),
                   ),
                   title: Text(
                     "Add new address",
@@ -138,7 +138,7 @@ class MyDrawer extends StatelessWidget {
                 ListTile(
                   leading: Icon(
                     Icons.logout,
-                    color: Colors.black,
+                    color: Color(0xff087e8b),
                   ),
                   title: Text(
                     "Logout",

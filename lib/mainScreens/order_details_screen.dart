@@ -85,7 +85,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen>
                             "Order on: " +
                                 DateFormat("dd MMMM, yyyy - hh:mm aa")
                                     .format(DateTime.fromMillisecondsSinceEpoch(int.parse(dataMap["orderTime"]))),
-                            style: const TextStyle(fontSize: 16, color: Colors.grey),
+                            style: const TextStyle(fontSize: 16, color: Colors.grey, fontWeight: FontWeight.bold),
                           ),
                         ),
                         const Divider(thickness: 1,),

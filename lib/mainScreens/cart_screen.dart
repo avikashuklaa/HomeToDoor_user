@@ -46,7 +46,7 @@ class _CartScreenState extends State<CartScreen> {
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                Color(0xffff99c8),
+                Color(0xff2ec4b6),
                 Color(0xff023e8a),
               ],
               begin: const FractionalOffset(0.0, 0.0),
@@ -119,7 +119,7 @@ class _CartScreenState extends State<CartScreen> {
                 "Clear cart",
                 style: TextStyle(fontSize: 15),
               ),
-              backgroundColor: Colors.blueGrey,
+              backgroundColor: Color(0xff087e8b),
               icon: Icon(
                 Icons.delete
               ),
@@ -138,7 +138,7 @@ class _CartScreenState extends State<CartScreen> {
                 "Checkout",
                 style: TextStyle(fontSize: 15),
               ),
-              backgroundColor: Colors.blueGrey,
+              backgroundColor: Color(0xff087e8b),
               icon: Icon(
                   Icons.navigate_next
               ),
@@ -171,7 +171,7 @@ class _CartScreenState extends State<CartScreen> {
                       ? Container()
                   : Text("Total Amount: ${amountProvider.tAmount.toString()}",
                   style: TextStyle(
-                    color: Colors.black38,
+                    color: Color(0xff087e8b),
                     fontSize: 20.0,
                     fontWeight: FontWeight.w500
                   ),),
