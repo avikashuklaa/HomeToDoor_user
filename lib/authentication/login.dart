@@ -147,12 +147,12 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Text(
               "Login",
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontWeight: FontWeight.bold,
               ),
             ),
             style: ElevatedButton.styleFrom(
-              primary: Color(0xff2ec4b6),
+              primary: Color(0xffffcad4),
             ),
 
           ),

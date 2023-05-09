@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hometodoor_user/assistantMethods/cart_item_counter.dart';
-import 'package:hometodoor_user/mainScreens/cart_screen.dart';
-import 'package:provider/provider.dart';
 
 class MyAppBar extends StatefulWidget with PreferredSizeWidget {
   final PreferredSizeWidget? bottom;
-  final String? chefUID;
-  MyAppBar({this.bottom, this.chefUID});
+  MyAppBar({this.bottom});
 
   @override
   State<MyAppBar> createState() => _MyAppBarState();
@@ -24,8 +20,8 @@ class _MyAppBarState extends State<MyAppBar> {
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Color(0xff2ec4b6),
-              Color(0xff2ec4b6),
+              Color(0xffff99c8),
+              Color(0xff023e8a),
             ],
             begin: const FractionalOffset(0.0, 0.0),
             end: const FractionalOffset(1.0, 0.0),
@@ -52,31 +48,26 @@ class _MyAppBarState extends State<MyAppBar> {
           children: [
             IconButton(
                 onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (c) => CartScreen(chefUID: widget.chefUID)));
+
                 },
-                icon: Icon(Icons.shopping_cart), color: Color(0xff335c67),),
+                icon: Icon(Icons.shopping_cart)),
             Positioned(
               child: Stack(
                 children: [
                   Icon(
                     Icons.brightness_1,
                     size: 20.0,
-                    color: Color(0xff335c67),
+                    color: Colors.black,
                   ),
                   Positioned(
                     top: 3,
                     right: 4,
                     child: Center(
-                      child: Consumer<CartItemCounter>(
-                        builder: (context, counter, c){
-                          return Text(counter.count.toString(),
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 12.0
-                            ),
-                          );
-                        },
-                      ),
+                      child: Text("0",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 12.0
+                        ),),
                     ),
                   )
                 ],

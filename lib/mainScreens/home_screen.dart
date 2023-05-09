@@ -6,7 +6,6 @@ import 'package:hometodoor_user/widgets/chefs_design.dart';
 import 'package:hometodoor_user/widgets/my_drawer.dart';
 import 'package:hometodoor_user/widgets/progress_bar.dart';
 
-import '../assistantMethods/assistant_methods.dart';
 import '../authentication/auth_screen.dart';
 import '../global/global.dart';
 import '../models/chefs.dart';
@@ -50,13 +49,6 @@ class _HomeScreenState extends State<HomeScreen> {
     "slider/26.jpg",
     "slider/27.jpg"
   ];
-
-  @override
-  void initState() {
-
-    super.initState();
-    clearCartNow(context);
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,8 +57,8 @@ class _HomeScreenState extends State<HomeScreen> {
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                Color(0xff2ec4b6),
-                Color(0xff2ec4b6),
+                Color(0xffff99c8),
+                Color(0xff023e8a),
               ],
               begin: const FractionalOffset(0.0, 0.0),
               end: const FractionalOffset(1.0, 0.0),
@@ -90,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: EdgeInsets.all(10.0),
               child: Container(
                 height: MediaQuery.of(context).size.height * .3,
-                width: MediaQuery.of(context).size.width - 10,
+                width: MediaQuery.of(context).size.width,
                 child: CarouselSlider(
                   options: CarouselOptions(
                     height:  MediaQuery.of(context).size.height * .3,
@@ -115,7 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Padding(
                           padding: EdgeInsets.all(4.0),
                           child: Image.asset(index,
-                          fit: BoxFit.cover,
+                          fit: BoxFit.fill,
                           ),
                         ),
                       );
@@ -132,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ? SliverToBoxAdapter(child: Center(child: circularProgress(),),)
                   : SliverStaggeredGrid.countBuilder(
                   crossAxisCount: 1,
-                  staggeredTileBuilder: (c) => StaggeredTile.fit(10),
+                  staggeredTileBuilder: (c) => StaggeredTile.fit(1),
                   itemBuilder: (context, index) {
                     Chefs cmodel = Chefs.fromJson(
                       snapshot.data!.docs[index].data()! as Map<String, dynamic>

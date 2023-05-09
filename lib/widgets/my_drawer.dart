@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hometodoor_user/global/global.dart';
-import 'package:hometodoor_user/mainScreens/address_screen.dart';
-import 'package:hometodoor_user/mainScreens/history_screen.dart';
-import 'package:hometodoor_user/mainScreens/home_screen.dart';
-import 'package:hometodoor_user/mainScreens/my_orders_screen.dart';
-import 'package:hometodoor_user/mainScreens/search_screen.dart';
 
 import '../authentication/auth_screen.dart';
 
@@ -42,7 +37,7 @@ class MyDrawer extends StatelessWidget {
                   sharedPreferences!.getString("name")!,
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 30.0,
+                    fontSize: 20.0,
                     fontFamily:"Signatra",
                   ),
                 )
@@ -63,7 +58,7 @@ class MyDrawer extends StatelessWidget {
                 ListTile(
                   leading: Icon(
                     Icons.home,
-                    color: Color(0xff087e8b),
+                    color: Colors.black,
                   ),
                   title: Text(
                     "Home",
@@ -72,13 +67,13 @@ class MyDrawer extends StatelessWidget {
                     ),
                   ),
                   onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (c) => HomeScreen()));
+
                   },
                 ),
                 ListTile(
                   leading: Icon(
                     Icons.reorder,
-                    color: Color(0xff087e8b),
+                    color: Colors.black,
                   ),
                   title: Text(
                     "My Orders",
@@ -87,13 +82,13 @@ class MyDrawer extends StatelessWidget {
                     ),
                   ),
                   onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (c) => MyOrdersScreen()));
+
                   },
                 ),
                 ListTile(
                   leading: Icon(
                     Icons.history,
-                    color: Color(0xff087e8b),
+                    color: Colors.black,
                   ),
                   title: Text(
                     "History",
@@ -102,13 +97,13 @@ class MyDrawer extends StatelessWidget {
                     ),
                   ),
                   onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (c) => HistoryScreen()));
+
                   },
                 ),
                 ListTile(
                   leading: Icon(
                     Icons.search,
-                    color: Color(0xff087e8b),
+                    color: Colors.black,
                   ),
                   title: Text(
                     "Search",
@@ -117,13 +112,13 @@ class MyDrawer extends StatelessWidget {
                     ),
                   ),
                   onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (c) => SearchScreen()));
+
                   },
                 ),
                 ListTile(
                   leading: Icon(
                     Icons.location_city,
-                    color: Color(0xff087e8b),
+                    color: Colors.black,
                   ),
                   title: Text(
                     "Add new address",
@@ -132,13 +127,13 @@ class MyDrawer extends StatelessWidget {
                     ),
                   ),
                   onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (c) => AddressScreen()));
+
                   },
                 ),
                 ListTile(
                   leading: Icon(
                     Icons.logout,
-                    color: Color(0xff087e8b),
+                    color: Colors.black,
                   ),
                   title: Text(
                     "Logout",

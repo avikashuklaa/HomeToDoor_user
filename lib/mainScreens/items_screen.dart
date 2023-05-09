@@ -27,7 +27,7 @@ class _ItemsScreenState extends State<ItemsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
 
-        appBar: MyAppBar(chefUID: widget.model!.chefUID),
+        appBar: MyAppBar(),
         body: CustomScrollView(
           slivers: [
             SliverPersistentHeader(pinned: true,
